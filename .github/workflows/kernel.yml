@@ -5,13 +5,11 @@ on:
     paths:
       - ".github/workflows/kernel.yml"
   workflow_dispatch:
-  schedule:
-    - cron: "14 13 * * 5"
 
 jobs:
   Read-configuration:
     name: 🐂 Parse *.config.json
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       CONFIGS: ${{ steps.generate-matrix.outputs.CONFIGS }}
       BUILD_DATE: ${{ steps.generate-builddate.outputs.BUILDDATE }}
@@ -35,7 +33,7 @@ jobs:
 
   Build-Kernel:
     name: "🐎 Build kernel"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs:
       - Read-configuration
     strategy:
