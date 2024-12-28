@@ -3,7 +3,7 @@
     "kernelSource": {
       "name": "1",
       "repo": "https://github.com/AnonymousU123456/android_kernel_xiaomi_mt6877",
-      "branch": "lineage-21",
+      "branch": "14.0",
       "device": "atom",
       "defconfig": "atom_defconfig"
     },
